@@ -5,12 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Nmaps Dashboard Application Version</title>
 <!--BEGIN BOOTSTRAP&JS-->
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.datetimepicker.full.js"></script>
-<script src="js_original/SHOWTIME.js"></script>
-<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
 <link href="css_original/Top_Part.css" rel="stylesheet"/>
@@ -112,58 +106,11 @@
 <!--END row2-->
 </div>
 <!--END container--> 
-<!--Search method and create RULE_INFO table--> 
-<script>
-$('#Search').click(function (){
-     if ($.fn.dataTable.isDataTable('#Delivery_Log'))
-    {
-        _table = $('#Delivery_Log').DataTable();
-        _table.destroy();
-    } 
-	
-	var table=$('#Delivery_Log').dataTable( {   
-	    bPaginate : false,
-        bSort: false,
-		paging:false,
-		bInfo: false,
-		oLanguage:{
-	    sSearch:"&nbsp;&nbsp<span class='glyphicon glyphicon-search searchbar'></span>&nbsp;&nbsp;",
-		sZeroRecords: "<span style='color:#F33'>【データが見つかりませんでした。】</span>",
-		sInfoEmpty: "<span style='color:#F33'>【データがありません。】</span>",
-		sProcessing : "<span style='color:#F33'>ダウロード中．．．</span>" 
-			 }, 
-		sAjaxSource : 'http://wthrcdn.etouch.cn/weather_mini', 
-        sAjaxDataProp : "data.forecast",　　   
-		fnServerParams: function ( aoData ) {
-           aoData.push( {"name": "citykey", "value": $("#Ruleid").val(),})
-		   //aoData.push( { "name": "tag", "value": $("#Clientid").val(),});
-		   //aoData.push( { "name": "count", "value": $("#Type").val(),});
-        },
-		aoColumns : [
-			{ sTitle:"【風向】",　  mData: "fengxiang"},
-            { sTitle:"【風力】",　  mData: "fengli"},
-			{ sTitle:"【最高気温】",mData: "high"},
-            { sTitle:"【種類】",　  mData: "type"},
-			{ sTitle:"【最低気温】",mData: "low"},
-            { sTitle:"【日付】",　  mData: "date",bVisible:false},
-         ],
-     });
-});
-
-<!--Explaination of search botton-->
-
-$(function(){
-	$('[data-toggle=tooltip]').tooltip();
-	});
-</script>
- 
-<script>
-$.datetimepicker.setLocale('en');
-$('#datetimepicker').datetimepicker();
-$('#open').click(function(){
-	$('#datetimepicker').datetimepicker('show');
-});
-</script> 
-<!--END body_block-->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.full.js"></script>
+<script src="js_original/SHOWTIME.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script src="js_original/DELIVERY_LOG.js"></script>
 </body>
 </html>

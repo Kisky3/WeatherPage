@@ -15,22 +15,21 @@
 	margin-left: auto;
 }
 
+.block_high {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 145px;
+    height: 150px;
+    width: 200px;
+}
+
 .Recv02Disk {
-	position: absolute;
-	width: 200px;
-	height: 115px;
 	z-index: 1;
-	left: 878px;
-	top: 159px;
 }
 
 .Recv01Disk {
-	position: absolute;
-	width: 200px;
-	height: 115px;
 	z-index: 1;
-	left: 510px;
-	top: 155px;
 }
 
 .Storage_height {
