@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- autor:Xiang Yu -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nmaps Dashboard Application Version</title>
+
+<!--BEGIN BOOTSTRAP&JS-->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script src="js_original/SHOWTIME.js"></script>
+<script src="css_original/App_Version.js"></script>
+
+
+<link href="css_original/Top_Part.css" rel="stylesheet"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css_original/App_Version_Info.css" rel="stylesheet"/>
+
+<!--END BOOTSTRAP&JS-->
+
+<style type="text/css">
+</style>
+</head>
+
+<body>
+<!--BEGIN navigation bar-->
+<div class="title_bar"> </div>
+<div class="navtop">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li> <a href="INDEX.html"><i class="glyphicon glyphicon-home"></i>ホーム</a> </li>
+        <li> <a href="RULE_INFO.html"> <i class="glyphicon glyphicon-zoom-in"></i> 配信ルール </b> </a> </li>
+        <li> <a href="DELIVERY_LOG.html"> <i class="glyphicon glyphicon-random"></i> 配信ログ </b> </a> </li>
+        <li> <a href="CLIENT_INFO_CTL.html"> <i class="glyphicon glyphicon-search"></i> 端末情報管理</b> </a> </li>
+        <li> <a href="APP_VERSION_INFO.html"> <i class="glyphicon glyphicon-star-empty"></i> アプリバージョン </b></a> </li>
+        <li> <a href="PROCESS.html"> <i class="glyphicon glyphicon-cog"></i> プロセス状況</b> </a> </li>
+      </ul>
+      
+      <!--BEGIN ShowTime-->
+      <div>
+        <div class="showtime">
+          <div class="row">
+            <div class="col-xs-1"> <span class="glyphicon glyphicon-calendar"></span> </div>
+            <div class="col-xs-4"> <span id="nowDateTimeSpan"></span> </div>
+            <div class="col-xs-1"> <span class="glyphicon glyphicon-time"></span> </div>
+            <div class="col-xs-6"> <span id="nowDateTimeSpan3"></span> <span id="nowDateTimeSpan2"></span> </div>
+          </div>
+        </div>
+      </div>
+      <!--END ShowTime-->
+      </li>
+    </div>
+  </nav>
+</div>
+
+<!--END navigation bar--> 
+
+<!--BEGIN body_block-->
+<div class="body_block">
+  <div class="container"> 
+    <!--BEGIN row2-->
+    <div class="bccolor row_style">
+      <div class="row row_high">
+        <p> <i class="glyphicon glyphicon-cloud"></i>アプリバージョン</p>
+      </div>
+    </div>
+    <div class="row row_space"> </div>
+    <div class="bccolor">
+      <div class="row">
+        <div class="col-xs-12"> 
+          
+          <!--BEGIN table-->
+          <table border="1" class="table table-hover app_ver_info th td table_style" id="AppVersion">
+            <thead>
+              <tr></tr>
+            </thead>
+          </table>
+          <!--END table--> 
+        </div>
+      </div>
+    </div>
+    <!--END row2--> 
+  </div>
+  <!--END container--> 
+</div>
+<script type="text/javascript"> 
+   // JavaScript Document
+</script> 
+<!--END body_block-->
+</body>
+</html>

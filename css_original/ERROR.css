@@ -1,0 +1,14 @@
+@charset "utf-8";
+body{
+ background:#333
+}
+
+.body_block{
+  margin-top:200px;
+  margin-left:auto;
+  margin-right:auto;
+  color:#F66;
+  height:800px;
+  width:1000px;
+}/* CSS Document */
+

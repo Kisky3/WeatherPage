@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- autor:Xiang Yu -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nmaps Dashboard Application Version</title>
+<!--BEGIN BOOTSTRAP&JS-->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.full.js"></script>
+<script src="js_original/SHOWTIME.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+<link href="css_original/Top_Part.css" rel="stylesheet"/>
+<link href="css_original/RULE_INFO.css" rel="stylesheet"/>
+<link href="css_original/DELIVERY_LOG.css" rel="stylesheet"/>
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	width: 244px;
+	height: 42px;
+	z-index: 1;
+	left: 162px;
+	top: 318px;
+}
+</style>
+<!--END BOOTSTRAP&JS-->
+</head>
+<body>
+<!--BEGIN navigation bar-->
+<div class="title_bar"> </div>
+<div class="title_top">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li> <a href="INDEX.html"><i class="glyphicon glyphicon-home"></i>ホーム</a> </li>
+        <li> <a href="RULE_INFO.html"> <i class="glyphicon glyphicon-zoom-in"></i> 配信ルール </b> </a> </li>
+        <li> <a href="DELIVERY_LOG.html"> <i class="glyphicon glyphicon-random"></i> 配信ログ </b> </a> </li>
+        <li> <a href="CLIENT_INFO_CTL.html"> <i class="glyphicon glyphicon-search"></i> 端末情報管理</b> </a> </li>
+        <li> <a href="APP_VERSION_INFO.html"> <i class="glyphicon glyphicon-star-empty"></i> アプリバージョン </b></a> </li>
+        <li> <a href="PROCESS.html"> <i class="glyphicon glyphicon-cog"></i> プロセス状況</b> </a> </li>
+      </ul>
+      <!--BEGIN ShowTime -->
+      <div class="showtime">
+        <div class="row">
+          <div class="col-xs-1"> <span class="glyphicon glyphicon-calendar"></span> </div>
+          <div class="col-xs-4"> <span id="nowDateTimeSpan"></span> </div>
+          <div class="col-xs-1"> <span class="glyphicon glyphicon-time"></span> </div>
+          <div class="col-xs-6"> <span id="nowDateTimeSpan3"></span> <span id="nowDateTimeSpan2"></span> </div>
+        </div>
+      </div>
+      <!--END ShowTime-->
+      </li>
+    </div>
+  </nav>
+</div>
+<!--END navigation bar--> 
+<!--BEGIN body_block-->
+<div class="body_block">
+  <div class="container"> 
+    <!--BEGIN row2-->
+    <div class="bccolor row_bc_style">
+      <div class="row row_high">
+        <p> <i class="glyphicon glyphicon-cloud"></i>配信ログ</p>
+        <span id="error"></span>
+      </div>
+    </div>
+    <div class="bccolor"> 
+      <!--BEGIN search bar-->
+      <table class="table_style">
+        <tr>
+          <td class="td_width"><table class="searchbar table_width">
+              <tr>
+                <td width="27" height="20" align="center" valign="top"><i class="glyphicon glyphicon-search searchbar"></i></td>
+                <td width="320">ルールID
+                  <input type="text" name="rule" id="Ruleid" class="form-control ruleid_search" placeholder="ルールIDを入力してください..."/></td>
+                <td width="27" height="20" align="center" valign="top"><i class="glyphicon glyphicon-search searchbar"></i></td>
+                <td width="320">クライアントID
+                  <input type="text" id="Clientid" class="form-control ruleid_search" placeholder="クライアントIDを入力してください..."/>
+                 </td>
+                <td width="27" height="20" align="center" valign="top"><i class="glyphicon glyphicon-search searchbar"></i></td>
+                <td width="320">要求受付日時
+                  <input type="text" class="form-control ruleid_search" value="2016/12/06 18:00" id="datetimepicker"/></td>
+                <td width="148" align="center" valign="bottom"><button id="Search" class="btn btn-info button_style" data-toggle="tooltip" 
+                   data-placement="bottom" title="項目を入力あるいは選択して検索してください。"> 検索 </button></td>
+              </tr>
+              <tr>
+                <td height="43" colspan="7" valign="top" style="height:5px;"><hr/></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <!--END search bar--> 
+    </div>
+    <div class="bccolor">
+      <div class="row">
+        <div class="col-xs-12"> 　　　　　　　　　
+          <table border="1" class="table table-hover Rule_Info th td" id="Delivery_Log">
+            <thead>
+              <tr></tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--END RULE_INFO Table--> 
+  </div>
+</div>
+</div>
+<!--END row2-->
+</div>
+<!--END container--> 
+<!--Search method and create RULE_INFO table--> 
+<script>
+$('#Search').click(function (){
+     if ($.fn.dataTable.isDataTable('#Delivery_Log'))
+    {
+        _table = $('#Delivery_Log').DataTable();
+        _table.destroy();
+    } 
+	
+	var table=$('#Delivery_Log').dataTable( {   
+	    bPaginate : false,
+        bSort: false,
+		paging:false,
+		bInfo: false,
+		oLanguage:{
+	    sSearch:"&nbsp;&nbsp<span class='glyphicon glyphicon-search searchbar'></span>&nbsp;&nbsp;",
+		sZeroRecords: "<span style='color:#F33'>【データが見つかりませんでした。】</span>",
+		sInfoEmpty: "<span style='color:#F33'>【データがありません。】</span>",
+		sProcessing : "<span style='color:#F33'>ダウロード中．．．</span>" 
+			 }, 
+		sAjaxSource : 'http://wthrcdn.etouch.cn/weather_mini', 
+        sAjaxDataProp : "data.forecast",　　   
+		fnServerParams: function ( aoData ) {
+           aoData.push( {"name": "citykey", "value": $("#Ruleid").val(),})
+		   //aoData.push( { "name": "tag", "value": $("#Clientid").val(),});
+		   //aoData.push( { "name": "count", "value": $("#Type").val(),});
+        },
+		aoColumns : [
+			{ sTitle:"【風向】",　  mData: "fengxiang"},
+            { sTitle:"【風力】",　  mData: "fengli"},
+			{ sTitle:"【最高気温】",mData: "high"},
+            { sTitle:"【種類】",　  mData: "type"},
+			{ sTitle:"【最低気温】",mData: "low"},
+            { sTitle:"【日付】",　  mData: "date",bVisible:false},
+         ],
+     });
+});
+
+<!--Explaination of search botton-->
+
+$(function(){
+	$('[data-toggle=tooltip]').tooltip();
+	});
+</script>
+ 
+<script>
+$.datetimepicker.setLocale('en');
+$('#datetimepicker').datetimepicker();
+$('#open').click(function(){
+	$('#datetimepicker').datetimepicker('show');
+});
+</script> 
+<!--END body_block-->
+</body>
+</html>

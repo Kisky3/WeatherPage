@@ -1,0 +1,26 @@
+@charset "utf-8";
+.app_ver_info th {
+	background: #666666;
+	font-size: 14px;
+	color: #FFF;
+	border: thin;
+}
+.app_ver_info td {
+	height: 15px;
+	background: none;
+}
+.row_high {
+	height: 25px;
+}
+.row_space {
+	height: 5px;
+}
+.row_style {
+	margin-top: 5px;
+	background: #09C;
+}/* CSS Document */
+
+.table_style {
+	width: 1143;
+	margin-top: 15px;
+}

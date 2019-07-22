@@ -1,0 +1,151 @@
+.bccolor_top {
+	background-color: rgba(220, 215, 209, 0.27);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.round {
+	border-radius: 3px;
+}
+
+.graph_block {
+	width: 250px;
+	height: 250px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.Recv02Disk {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+	left: 878px;
+	top: 159px;
+}
+
+.Recv01Disk {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+	left: 510px;
+	top: 155px;
+}
+
+.Storage_height {
+	height: 150px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.Storage_mark_block {
+	margin-left: auto;
+	margin-right: auto;
+	width: 250px;
+	padding-top: 10px;
+	margin-top: 25px;
+	height: 100px;
+	background: #F99;
+}
+.mark_block_space {
+	width: 200px;
+}
+.inbox_style {
+	color: #404040;
+	font-size: 55px;
+	margin-left: 45px;
+	margin-top: 15px;
+}
+.mark_block_style {
+ style="height:30px;
+	margin-top: 10px;
+}
+.mark_block_style p {
+	color: #FFF;
+	font-size: 50px;
+	width: 100px;
+	margin-left: 45px
+}
+.Recvo01Disk_TableBar_color {
+	background: #FC3
+}
+.row_height {
+	height: 25px;
+}
+.row_space {
+	height: 5px;
+}
+.block_high {
+	height: 150px;
+	width: 200px;
+}
+.Recvo02Disk_TableBar_color {
+	background: #9CC;
+}
+
+.ActiveClient th {
+	background: #666666;
+	font-size: 14px;
+	color: #FFF;
+	border:thin;
+}
+
+.ActiveClient td{
+    height:15px;
+	background:none;
+}
+.Recv_TableBar_Color {
+	background: #999;
+}
+
+.Send_TableBar_Color {
+	background: #333;
+}
+
+.table_top {
+	margin-top: 10px;
+}
+
+
+.row_style {
+	margin-top: 15px;
+}
+
+
+.Storage_font_size {
+	font-size: 15px;
+}
+
+.Storage_TableBar_color{
+   background: #F58184;  
+}
+
+.running{
+    height:20px;
+	width:85px;
+	background:#005A86;
+	margin-left:auto;
+	margin-right:auto;
+	float:left;
+	 border-top-left-radius:3px;
+    border-top-right-radius:3px;
+	 border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+	
+}
+
+.stop{
+    height:20px;
+	width:85px;
+	background:#C43737;
+	float:left;
+	 border-top-left-radius:3px;
+    border-top-right-radius:3px;
+	 border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+}
+
+.recv02_high{
+   border:thick;
+   background:none;
+}

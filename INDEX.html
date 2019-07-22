@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- autor:Xiang Yu-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nmaps Dashboard Index</title>
+
+<!--BEGIN JS&CSS-->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/raphael-2.1.4.min.js"></script>
+<script src="js/justgage.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script src="js_original/SHOWTIME.js"></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css_original/Top_Part.css" rel="stylesheet"/>
+<link href="css_original/INDEX.css" rel="stylesheet"/>
+
+<!--END JS&CSS-->
+</head>
+
+<body>
+
+<!--BEGIN Nnavigation Bar-->
+<div class="title_bar"></div>
+<div class="navtop">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li> <a href="INDEX.html"> <i class="glyphicon glyphicon-home"></i>ホーム </a> </li>
+        <li> <a href="RULE_INFO.html"> <i class="glyphicon glyphicon-zoom-in"></i>配信ルール </a> </li>
+        <li> <a href="DELIVERY_LOG.html"> <i class="glyphicon glyphicon-random"></i> 配信ログ </a> </li>
+        <li> <a href="CLIENT_INFO_CTL.html"> <i class="glyphicon glyphicon-search"></i> 端末情報管理 </a> </li>
+        <li> <a href="APP_VERSION_INFO.html"> <i class="glyphicon glyphicon-star-empty"></i> アプリバージョン </a> </li>
+        <li> <a href="PROCESS.html"> <i class="glyphicon glyphicon-cog"></i> プロセス状況 </a> </li>
+      </ul>
+      
+      <!--BEGIN ShowTime -->
+      
+      <div class="showtime">
+        <div class="row">
+          <div class="col-xs-1"> <span class="glyphicon glyphicon-calendar"></span> </div>
+          <div class="col-xs-4"> <span id="nowDateTimeSpan"></span> </div>
+          <div class="col-xs-1"> <span class="glyphicon glyphicon-time"></span> </div>
+          <div class="col-xs-6"> <span id="nowDateTimeSpan3"></span> <span id="nowDateTimeSpan2"></span> </div>
+        </div>
+      </div>
+      
+      <!--END ShowTime-->
+      </li>
+    </div>
+  </nav>
+</div>
+
+<!--END Navigation Bar--> 
+
+<!--BEGIN body_block-->
+<div class="body_block">
+  <div class="container"> 
+    
+    <!--BEGIN row1-->
+    <div class="row"> 
+      
+      <!--BEGIN Storage Usage-->
+      <div class="col-xs-4">
+        <div class="bccolor Storage_TableBar_color">
+          <div class="row row_height">
+            <p id="Storage_error"> <i class="glyphicon glyphicon-cloud"></i> Storage Usage </p>
+          </div>
+        </div>
+        <div class="row row_space"> </div>
+        <div class="bccolor_top">
+          <div class="row Storage_height"> 
+            
+            <!--BEGIN Storage Usage Content -->
+            <div class="row; round; Storage_mark_block">
+              <div class="row mark_block_space">
+                <div class="col-xs-5"> <i class="glyphicon glyphicon-inbox inbox_style"></i> </div>
+                <div class="col-xs-6" >
+                  <div class="row mark_block_style"> 
+                    <!--BEGIN API number -->
+                    <p><span id="Storage"></span><span class="Storage_font_size">TB</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END Storage Usage Content--> 
+          </div>
+        </div>
+      </div>
+      <!--END Storage Usage--> 
+    
+      <!--BEGIN Recv01 Disk Usage-->
+      <div class="col-xs-4">
+        <div class="bccolor Recvo01Disk_TableBar_color">
+          <div class="row row_height">
+            <p id="Recv01_error"> <i class="glyphicon glyphicon-cloud"></i> Recvo01 Disk Usage </p>
+          </div>
+        </div>
+        <div class="row row_space"> </div>
+        <div class="bccolor_top">
+          <div class="block_high"></div>
+          <div class="Recv01Disk">
+            <div id="Recv01Disk" class="graph_block"></div>
+          </div>
+        </div>
+      </div>
+      <!--END Recv01 Disk Usage-->
+      
+      <!--BEGIN Recv02 Disk Usage-->
+      <div class="col-xs-4">
+        <div class="bccolor Recvo02Disk_TableBar_color">
+          <div class="row row_height">
+            <p id="Recv02_error"> <i class="glyphicon glyphicon-cloud"></i> Recvo02 Disk Usage </p>
+          </div>
+        </div>
+        <div class="row row_space"></div>
+        <div class="bccolor_top">
+          <div class="block_high"></div>
+          <div class="Recv02Disk">
+            <div id="Recv02Disk" class="graph_block" data-value="25"></div>
+          </div>
+        </div>
+      </div>
+      <!--END Recv02 Disk Usage-->  
+    </div>
+    <!--END row1--> 
+    
+    <!--BEGIN row2-->
+    <div class="row row_style">
+      <div class="col-xs-12">
+        <div class="bccolor">
+          <div class="row row_height">
+            <p id="ActiveClient_error"> <i class="glyphicon glyphicon-cloud"></i> Active Clients </p>
+          </div>
+        </div>
+        <div class="row row_space"></div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="bccolor"> 
+              <!--BEGIN ActiveClient Table-->
+              <table class="table table-hover ActiveClient th td" id="activeClient">
+                <thead>
+                  <tr> </tr>
+                </thead>
+              </table>
+              <!--END ActiveClient Table--> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--END row2--> 
+    
+    <!--BEGIN row3-->
+    <div class="row row_style">
+      <div class="col-xs-12">
+        <div class="row"> 
+          
+          <!--BEGIN Recv01 Process Status-->
+          <div class="col-xs-6 xs-6-style">
+            <div class="bccolor Recv_TableBar_Color">
+              <div class="row row_height">
+                <p> <i class="glyphicon glyphicon-cloud"></i> Recv02 Process Status </p>
+              </div>
+            </div>
+            <div class="row row_space"></div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="bccolor"> 
+                  <!--BEGIN table-->
+                  <table border="1" class="table table-hover table_top ActiveClient th td" id="Recv01">
+                    <thead>
+                      <tr> </tr>
+                    </thead>
+                  </table>
+                  <!--END table--> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END Recv01 Process Status--> 
+          
+          <!--BEGIN Recv01 Process Status-->
+          <div class="col-xs-6 xs-6-style">
+            <div class="bccolor Recv_TableBar_Color">
+              <div class="row row_height">
+                <p> <i class="glyphicon glyphicon-cloud"></i> Recv01 Process Status </p>
+              </div>
+            </div>
+            <div class="row row_space"></div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="bccolor"> 
+                  <!--BEGIN table-->
+                  <table border="1" class="table table-hover table_top ActiveClient th td" id="Recv02">
+                    <thead>
+                      <tr> </tr>
+                    </thead>
+                  </table>
+                  <!--END table--> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END Recv01 Process Status--> 
+          
+        </div>
+      </div>
+    </div>
+    <!--END row3--> 
+    
+    <!--BEGIN row4-->
+    <div class="row row_style">
+      <div class="col-xs-12">
+        <div class="row"> 
+          
+          <!--BEGIN Send01 Process Status-->
+          <div class="col-xs-6 xs-6-style">
+            <div class="bccolor Send_TableBar_Color">
+              <div class="row row_height">
+                <p> <i class="glyphicon glyphicon-cloud"></i> Send01 Process Status </p>
+              </div>
+            </div>
+            <div class="row row_space"></div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="bccolor"> 
+                  <!--BEGIN table-->
+                  <table border="1" class="table table-hover table_top ActiveClient th td" id="Send01">
+                    <thead>
+                      <tr> </tr>
+                    </thead>
+                  </table>
+                  <!--END table--> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END Send01 Process Status--> 
+          
+          <!--BEGIN Send02 Process Status-->
+          <div class="col-xs-6 xs-6-style">
+            <div class="bccolor Send_TableBar_Color">
+              <div class="row row_height">
+                <p> <i class="glyphicon glyphicon-cloud"></i> Send02 Process Status </p>
+              </div>
+            </div>
+            <div class="row row_space"></div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="bccolor"> 
+                  <!--BEGIN table-->
+                  <table border="1" class="table table-hover table_top ActiveClient th td" id="Send02">
+                    <thead>
+                      <tr> </tr>
+                    </thead>
+                  </table>
+                  <!--END table--> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END Send02 Process Status--> 
+        </div>
+      </div>
+    </div>
+    <!--END row4--> 
+  </div>
+</div>
+
+<!--BEGIN JS--> 
+
+<!--Read Json file here--> 
+
+<!--END JS-->
+
+</body>
+<script src="js_original/READ_JSON.js"></script>
+<script src="js_original/INDEX.js"></script>
+</html>

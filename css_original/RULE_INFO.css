@@ -1,0 +1,56 @@
+@charset "utf-8";
+.title_top {
+	padding-top: 116px;
+}
+.row_style {
+	margin-top: 5px;
+	background: #F66;
+}
+.row_space {
+	height: 5px;
+}
+.table_style {
+	width: 1143;
+	margin-top: 15px;
+}
+.td_width {
+	width: 337;
+}
+.table_width {
+	width: 1143;
+}
+.searchbar {
+	font-size: 15px;
+	margin-right: 0px;
+}
+.ruleid_search {
+	width: 250px;
+	height: 28px;
+}
+.form_style {
+	width: 300px;
+	height: 28px;
+	float: right
+}
+.button_style {
+	width: 102px;
+	height: 28px;
+	float: right;
+	margin-left: 10px;
+}
+
+.Rule_Info th {
+	background: #666666;
+	font-size: 14px;
+	color: #FFF;
+	border:thin;
+}
+
+.Rule_Info td{
+    height:15px;
+	background:none;
+}
+.row_high{
+ height:25px;}
+/* CSS Document */
+
