@@ -75,8 +75,7 @@ $('#Search').click(function () {
     }],
   });
 });
-<!--Explaination of search botton-->
+
 $(function () {
   $('[data-toggle=tooltip]').tooltip();
 });
-// JavaScript Document
