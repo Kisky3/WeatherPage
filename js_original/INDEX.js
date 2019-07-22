@@ -44,7 +44,7 @@ var Liuzhou = "101300301";
 <!--begin Storage graph-->
 function Storage() {
   $.ajax({
-    url: 'https://wthrcdn.etouch.cn/weather_mini?citykey=' + Shanghai,
+    url: 'http://wthrcdn.etouch.cn/weather_mini?citykey=' + Shanghai,
     dataType: 'json',
     <!--error-->
   }).fail(function (jaXHR, textStatus, errorThrown) {
@@ -60,7 +60,7 @@ function Storage() {
 <!--get Recv01 value from api-->
 function Recv01() {
   $.ajax({
-      url: 'https://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
+      url: 'http://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
       dataType: 'json',
       <!--error-->
     }).fail(function (jaXHR, textStatus, errorThrown) {
@@ -94,7 +94,7 @@ function Recv01() {
 <!--get Recv02 value from api-->
 function Recv02() {
   $.ajax({
-    url: 'https://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
+    url: 'http://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
     dataType: 'json',
     <!--error-->
   }).fail(function (jaXHR, textStatus, errorThrown) {
@@ -130,7 +130,7 @@ function ActiveClient() {
   var BeijingFengxiang;
   var BeijingType;
   $.ajax({
-      url: 'https://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
+      url: 'http://wthrcdn.etouch.cn/weather_mini?citykey=' + Beijing,
       dataType: 'json',
       <!--error-->  
     }).fail(function (jaXHR, textStatus, errorThrown) {
@@ -156,7 +156,7 @@ function ActiveClient() {
     bInfo: false,
     bJQueryUI: true,
     bFilter: false,
-    sAjaxSource: 'https://wthrcdn.etouch.cn/weather_mini?citykey=' + Liuzhou,
+    sAjaxSource: 'http://wthrcdn.etouch.cn/weather_mini?citykey=' + Liuzhou,
     sAjaxDataProp: "data.forecast",
     //create ActiveClient table
     aoColumns: [{
@@ -205,7 +205,7 @@ function Recv01Table() {
     bSort: false,
     bInfo: false,
     bFilter: false,
-    sAjaxSource: 'https://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
+    sAjaxSource: 'http://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
     sAjaxDataProp: "data.forecast",
     //compare value and edit value
     fnServerData: function (sSource, aoData, fnCallback, oSettings) {
@@ -249,7 +249,7 @@ function Recv02Table() {
     bSort: false,
     bInfo: false,
     bFilter: false,
-    sAjaxSource: 'https://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
+    sAjaxSource: 'http://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
     sAjaxDataProp: "data.forecast",
     //比較とデータの加工
     fnServerData: function (sSource, aoData, fnCallback, oSettings) {
@@ -295,7 +295,7 @@ function Send01Table() {
     bSort: false,
     bInfo: false,
     bFilter: false,
-    sAjaxSource: 'https://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
+    sAjaxSource: 'http://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
     sAjaxDataProp: "data.forecast",
     //比較とデータの加工
     fnServerData: function (sSource, aoData, fnCallback, oSettings) {
@@ -341,7 +341,7 @@ function Send02Table() {
     bSort: false,
     bInfo: false,
     bFilter: false,
-    sAjaxSource: 'https://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
+    sAjaxSource: 'http://wthrcdn.etouch.cn/weather_mini?citykey=101010100',
     sAjaxDataProp: "data.forecast",
     //比較とデータの加工
     fnServerData: function (sSource, aoData, fnCallback, oSettings) {
